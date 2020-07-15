@@ -1,0 +1,105 @@
+{
+  "networks":{
+
+    "6node":{
+      "name": "6node",
+      "nodesNumber": 6,
+      "edgesNumber": 7,
+      "fileMatrixLocation": "src/resources/graphs/network-sixnode/",
+      "fileEdgeDescriptionLocation": "src/resources/graphs/network-sixnode/",
+      "enabled": true
+    },
+
+    "via":{
+      "name": "via",
+      "nodesNumber": 9,
+      "edgesNumber": 24,
+      "fileMatrixLocation": "src/resources/graphs/network-via/",
+      "fileEdgeDescriptionLocation": "src/resources/graphs/network-via/",
+      "enabled": true
+    },
+
+    "bren":{
+      "name": "bren",
+      "nodesNumber": 10,
+      "edgesNumber": 22,
+      "fileMatrixLocation": "src/resources/graphs/network-bren/",
+      "fileEdgeDescriptionLocation": "src/resources/graphs/network-bren/",
+      "enabled": true
+    },
+
+    "learn":{
+      "name": "learn",
+      "nodesNumber": 10,
+      "edgesNumber": 22,
+      "fileMatrixLocation": "src/resources/graphs/network-learn/",
+      "fileEdgeDescriptionLocation": "src/resources/graphs/network-learn/",
+      "enabled": true
+    },
+
+    "rnp":{
+      "name": "rnp",
+      "nodesNumber": 10,
+      "edgesNumber": 24,
+      "fileMatrixLocation": "src/resources/graphs/network-rnp/",
+      "fileEdgeDescriptionLocation": "src/resources/graphs/network-rnp/",
+      "enabled": true
+    },
+
+    "abilene":{
+      "name": "abilene",
+      "nodesNumber": 11,
+      "edgesNumber": 28,
+      "fileMatrixLocation": "src/resources/graphs/network-abilene/",
+      "fileEdgeDescriptionLocation": "src/resources/graphs/network-abilene/",
+      "enabled": true
+    },
+
+    "compuserve":{
+      "name": "compuserve",
+      "nodesNumber": 11,
+      "edgesNumber": 28,
+      "fileMatrixLocation": "src/resources/graphs/network-compuserve/",
+      "fileEdgeDescriptionLocation": "src/resources/graphs/network-compuserve/",
+      "enabled": true
+    },
+
+    "nfsnet":{
+      "name": "nfsnet",
+      "nodesNumber": 14,
+      "edgesNumber": 42,
+      "fileMatrixLocation": "src/resources/graphs/network-nfsnet/",
+      "fileEdgeDescriptionLocation": "src/resources/graphs/network-nfsnet/",
+      "enabled": true
+    },
+
+    "eon":{
+      "name": "eon",
+      "nodesNumber": 19,
+      "edgesNumber": 76,
+      "fileMatrixLocation": "src/resources/graphs/network-eon/",
+      "fileEdgeDescriptionLocation": "src/resources/graphs/network-eon/",
+      "enabled": false
+    },
+
+    "cox":{
+      "name": "cox",
+      "nodesNumber": 24,
+      "edgesNumber": 40,
+      "fileMatrixLocation": "src/resources/graphs/network-cox/",
+      "fileEdgeDescriptionLocation": "src/resources/graphs/network-cox/",
+      "enabled": false
+    },
+
+    "sanet":{
+      "name": "sanet",
+      "nodesNumber": 25,
+      "edgesNumber": 28,
+      "fileMatrixLocation": "src/resources/graphs/network-sanet/",
+      "fileEdgeDescriptionLocation": "src/resources/graphs/network-sanet/",
+      "enabled": false
+    }
+
+
+  }
+}

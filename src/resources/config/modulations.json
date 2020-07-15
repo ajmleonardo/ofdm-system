@@ -1,0 +1,44 @@
+{
+
+  "modulations":{
+
+    "qam16_format":{
+      "bandwidthCarrier": 12.5,
+      "maxDistKM": 500,
+      "maxDistHops": 1,
+      "efficiency": 4,
+      "symbolRate": 0.25,
+      "enabled": false
+    },
+
+    "qam8_format":{
+      "bandwidthCarrier": 12.5,
+      "maxDistKM": 1000,
+      "maxDistHops": 2,
+      "efficiency": 3,
+      "symbolRate": 0.333,
+      "enabled": false
+    },
+
+    "qpsk_format":{
+      "bandwidthCarrier": 12.5,
+      "maxDistKM": 2000,
+      "maxDistHops": 4,
+      "efficiency": 2,
+      "symbolRate": 0.5,
+      "enabled": false
+    },
+
+    "bpsk_format":{
+      "bandwidthCarrier": 12.5,
+      "maxDistKM": 4000,
+      "maxDistHops": 8,
+      "efficiency": 1,
+      "symbolRate": 1,
+      "enabled": false
+    }
+    
+  }
+
+}
+

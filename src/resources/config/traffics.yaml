@@ -1,0 +1,4 @@
+numSteps: 3
+initDemand: 100 #Gbps
+incRate: 0 #Gbps/Step
+customEnabled: false
