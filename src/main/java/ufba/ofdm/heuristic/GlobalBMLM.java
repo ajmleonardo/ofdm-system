@@ -82,7 +82,7 @@ public class GlobalBMLM {
                         bestModEfficiency = modList.get(m).getEfficiency();
                         
     
-            numberOfSlots = Math.round( traffic.getDemand()/(bestModEfficiency * bestModBandwidth ) );
+            numberOfSlots = (int) Math.ceil( traffic.getDemand()/(bestModEfficiency * bestModBandwidth ) );
     
             return numberOfSlots;
     
