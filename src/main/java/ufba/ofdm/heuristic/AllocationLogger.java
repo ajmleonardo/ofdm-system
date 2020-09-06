@@ -1,10 +1,16 @@
 package ufba.ofdm.heuristic;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 import java.util.List;
 
 import ufba.ofdm.heuristic.IncrementalBMLM.EnvelopedPath;
 import ufba.ofdm.network.FiberLink;
 import ufba.ofdm.network.Traffic;
+import ufba.ofdm.network.TransparentNetwork;
 import ufba.ofdm.network.FiberLink.SubCarrier;
 
 public class AllocationLogger {
@@ -25,22 +31,88 @@ public class AllocationLogger {
 
     }
 
-    public void writeAllocation( int timeStep, Traffic traffic, List<EnvelopedPath> ePathList, EnvelopedPath chosenPath, List<FiberLink> linkList ){
+    public void writeAllocation( int timeStep, Traffic traffic, List<EnvelopedPath> ePathList, EnvelopedPath chosenPath, List<FiberLink> linkList, String netName ){
 
-        // Logging Information
-        System.out.println( logTimeStep(timeStep) );
-        System.out.print("\t");
-        System.out.println( logTraffic(traffic) );
+        // Creating directory first (necessary)
+        File file = new File( "src" + File.separatorChar +  "resources" + File.separatorChar + "output" + File.separatorChar +  netName);
 
-        System.out.println( logPaths(ePathList) );
+        file.mkdirs();
 
-        System.out.print("Chosen -> ");
-        System.out.println( logPath(chosenPath) );
-        System.out.println( logLinks(linkList) );
-        System.out.println("");
+        // Creating File
+        file = new File( "src" + File.separatorChar +  "resources" + File.separatorChar + "output" + File.separatorChar + 
+        netName + File.separatorChar + "step-by-step.txt");
+        
+        try {
+            if(file.exists() && timeStep == 0)
+                file.delete();
+            file.createNewFile();
+        } catch (IOException e1) {
+            // TODO Auto-generated catch block
+            e1.printStackTrace();
+        }
+
+        try{
+
+
+            BufferedWriter output =  new BufferedWriter( new FileWriter(file, true) );
+            // Logging Information
+            output.append( logTimeStep(timeStep) );
+            output.append("\t");
+            output.append( logTraffic(traffic) );
+            output.append( logPaths(ePathList) );
+            output.append("Chosen -> ");
+            output.append( logPath(chosenPath) );
+            output.append( logLinks(linkList) );
+            output.newLine();
+            
+            output.flush();
+            output.close();
+
+        } catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
     }
 
+    public void writeMaxSlotUsed(int timeStep, TransparentNetwork network){
+
+        System.out.println("\n\n" + network.getName() + " network -" + " time-Step: " + (timeStep+1) + "\n" + "Maxslot used: " + (network.getMaxSlotUsed()+1) );
+
+         // Creating directory first (necessary)
+         File file = new File( "src" + File.separatorChar +  "resources" + File.separatorChar + "output" + File.separatorChar +  network.getName());
+
+        file.mkdirs();
+         // Creating File
+         file = new File( "src" + File.separatorChar +  "resources" + File.separatorChar + "output" + File.separatorChar + 
+         network.getName() + File.separatorChar + "max_slots_used.txt");
+         
+         try {
+            if(file.exists() && timeStep == 0)
+                file.delete();
+             file.createNewFile();
+         } catch (IOException e1) {
+             // TODO Auto-generated catch block
+             e1.printStackTrace();
+         }
+
+         try{
+
+            BufferedWriter output =  new BufferedWriter( new FileWriter(file, true) );
+            // Logging Information
+            output.append(network.getName() + " network -" + " time-Step: " + (timeStep+1) + "\n" + "Maxslot used: " + (network.getMaxSlotUsed()+1) +"\n" );
+            output.newLine();
+            output.flush();
+            output.close();
+
+        } catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+
+    }
 
     public String logTimeStep( int timeStep ){
 
@@ -85,7 +157,7 @@ public class AllocationLogger {
     
         String linksLog = new String();
         for(int l = 0; l < linkList.size(); l++){
-            linksLog = linksLog + "Link " + linkList.get(l).getFromNode() + "-" + linkList.get(l).getToNode() + ": " ;
+            linksLog = linksLog + "Link " + linkList.get(l).getFromNode() + "-" + linkList.get(l).getToNode() + ":\t" ;
             linksLog = linksLog + logCarriers(linkList.get(l).getCarrierList()) + "\n";
         }
 

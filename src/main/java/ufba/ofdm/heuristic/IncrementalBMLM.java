@@ -5,18 +5,13 @@ import java.util.List;
 
 import ufba.ofdm.config.HeuristicConfig;
 import ufba.ofdm.config.ModulationConfig;
-import ufba.ofdm.graph.Edge;
 import ufba.ofdm.graph.ksp.KSPAlgorithm;
 import ufba.ofdm.graph.util.Path;
-import ufba.ofdm.network.FiberLink;
 import ufba.ofdm.network.IncrementalTraffic;
-import ufba.ofdm.network.LightPath;
 import ufba.ofdm.network.Traffic;
 import ufba.ofdm.network.TrafficMatrix;
 import ufba.ofdm.network.TransparentNetwork;
-import ufba.ofdm.network.FiberLink.SubCarrier;
 
-import org.w3c.dom.events.EventException;
 
 public class IncrementalBMLM {
 
@@ -192,24 +187,16 @@ public class IncrementalBMLM {
                 if(isPrintingEnabled())
                     getLogger().printAllocation(t, traffic, ePathList, ePathList.get(choosePath(ePathList)), network.getNetLinks() );
                 if(isWritingEnabled())
-                    getLogger().writeAllocation(t, traffic, ePathList, ePathList.get(choosePath(ePathList)), network.getNetLinks() );
-                    
-                
+                    getLogger().writeAllocation(t, traffic, ePathList, ePathList.get(choosePath(ePathList)), network.getNetLinks(), network.getName() );
+
                 }
 
-                printMaxSlotUsed(network);
+                network.setMetrics();
+                logger.writeMaxSlotUsed(t, network);
         }
 
         return network;
     }
-
-    public void printMaxSlotUsed(TransparentNetwork network){
-
-        network.setMetrics();
-        System.out.println("\n\n" + network.getName() + "\n" + "Maxslot used: " + (network.getMaxSlotUsed()+1) );
-       
-    }
-
 
     public int choosePath( List<EnvelopedPath> ePathList ){
 

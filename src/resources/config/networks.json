@@ -7,7 +7,7 @@
       "edgesNumber": 7,
       "fileMatrixLocation": "src/resources/graphs/network-sixnode/",
       "fileEdgeDescriptionLocation": "src/resources/graphs/network-sixnode/",
-      "enabled": true
+      "enabled": false
     },
 
     "via":{
@@ -16,7 +16,7 @@
       "edgesNumber": 24,
       "fileMatrixLocation": "src/resources/graphs/network-via/",
       "fileEdgeDescriptionLocation": "src/resources/graphs/network-via/",
-      "enabled": true
+      "enabled": false
     },
 
     "bren":{
@@ -25,7 +25,7 @@
       "edgesNumber": 22,
       "fileMatrixLocation": "src/resources/graphs/network-bren/",
       "fileEdgeDescriptionLocation": "src/resources/graphs/network-bren/",
-      "enabled": true
+      "enabled": false
     },
 
     "learn":{
@@ -34,7 +34,7 @@
       "edgesNumber": 22,
       "fileMatrixLocation": "src/resources/graphs/network-learn/",
       "fileEdgeDescriptionLocation": "src/resources/graphs/network-learn/",
-      "enabled": true
+      "enabled": false
     },
 
     "rnp":{
@@ -43,7 +43,7 @@
       "edgesNumber": 24,
       "fileMatrixLocation": "src/resources/graphs/network-rnp/",
       "fileEdgeDescriptionLocation": "src/resources/graphs/network-rnp/",
-      "enabled": true
+      "enabled": false
     },
 
     "abilene":{
@@ -52,7 +52,7 @@
       "edgesNumber": 28,
       "fileMatrixLocation": "src/resources/graphs/network-abilene/",
       "fileEdgeDescriptionLocation": "src/resources/graphs/network-abilene/",
-      "enabled": true
+      "enabled": false
     },
 
     "compuserve":{
@@ -61,7 +61,7 @@
       "edgesNumber": 28,
       "fileMatrixLocation": "src/resources/graphs/network-compuserve/",
       "fileEdgeDescriptionLocation": "src/resources/graphs/network-compuserve/",
-      "enabled": true
+      "enabled": false
     },
 
     "nfsnet":{

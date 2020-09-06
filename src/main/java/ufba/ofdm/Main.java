@@ -11,7 +11,6 @@ import ufba.ofdm.config.NetworkConfig;
 import ufba.ofdm.config.TrafficConfig;
 import ufba.ofdm.graph.ksp.KSPAlgorithm;
 import ufba.ofdm.graph.ksp.Yen;
-import ufba.ofdm.graph.util.Path;
 import ufba.ofdm.heuristic.FirstFit;
 import ufba.ofdm.heuristic.GlobalBMLM;
 import ufba.ofdm.heuristic.IncrementalBMLM;

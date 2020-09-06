@@ -190,6 +190,7 @@ public class GlobalBMLM {
             int bestPathIndex = choosePath(ePathList);
 
             network = fFit.fit(traffic.getOrigin(), traffic.getDestination(), ePathList.get(bestPathIndex).gettLoad(), network, ePathList.get(bestPathIndex).getPath());
+             
         }
         
         printMaxSlotUsed(network);

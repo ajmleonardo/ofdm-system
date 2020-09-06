@@ -1,5 +1,5 @@
 hopsNumber: 20
-guardBandNumber: 1
+guardBandNumber: 0
 routesNumber: 1
 sortingEnabled: false
 printingEnabled: false

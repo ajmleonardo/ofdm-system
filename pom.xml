@@ -54,7 +54,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>com.ufba.ppgee.Main</mainClass>
+              <mainClass>ufba.ofdm.Main</mainClass>
             </manifest>
           </archive>
           <descriptorRefs>
